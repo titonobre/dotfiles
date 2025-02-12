@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+set -e
+
+UNAME=$(uname)
+PLATFORM="unknown"
+if [[ $UNAME == "Darwin" ]]; then
+    PLATFORM="macos"
+elif [[ $UNAME == "Linux" ]]; then
+    PLATFORM="linux"
+fi
+
+if [ "$PLATFORM" == "macos" ]; then
+    ./setup-homebrew
+    ./setup-mac-preferences
+fi
+
+./setup-others

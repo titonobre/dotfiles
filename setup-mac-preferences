@@ -1,0 +1,128 @@
+#!/usr/bin/env bash
+
+set -e
+
+# Close any open System Preferences panes, to prevent them from overriding settings we’re about to change
+osascript -e 'tell application "System Preferences" to quit'
+
+# General UI/UX
+
+# Set scrollbars to automatic. Possible values: `WhenScrolling`, `Automatic` and `Always`
+defaults write NSGlobalDomain AppleShowScrollBars -string "Automatic"
+
+# Expand save panel by default
+defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
+defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 -bool true
+
+# Expand print panel by default
+defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
+defaults write NSGlobalDomain PMPrintingExpandedStateForPrint2 -bool true
+
+# Set Help Viewer windows to non-floating mode
+defaults write com.apple.helpviewer DevMode -bool true
+
+# Disable automatic capitalization as it’s annoying when typing code
+defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
+
+# Disable smart dashes as they’re annoying when typing code
+defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
+
+# Disable automatic period substitution as it’s annoying when typing code
+defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
+
+# Disable smart quotes as they’re annoying when typing code
+defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
+
+# Disable press-and-hold for keys in favor of key repeat
+defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
+
+# Set a blazingly fast keyboard repeat rate
+defaults write NSGlobalDomain KeyRepeat -int 6
+defaults write NSGlobalDomain InitialKeyRepeat -int 25
+
+# Screen
+
+# Require password immediately after sleep or screen saver begins
+defaults write com.apple.screensaver askForPassword -int 1
+defaults write com.apple.screensaver askForPasswordDelay -int 0
+
+# Dock
+
+# Set dock to the left
+defaults write com.apple.dock "orientation" -string "left"
+
+# Do not display recent apps in the Dock
+defaults write com.apple.dock "show-recents" -bool false
+
+# Auto hide the dock
+defaults write com.apple.dock "autohide" -bool true
+
+# Genie effect for minimizing windows (default)
+defaults write com.apple.dock "mineffect" -string "scale"
+
+# Set the icon size of Dock items to 36 pixels
+defaults write com.apple.dock tilesize -int 36
+
+# Make Dock icons of hidden applications translucent
+defaults write com.apple.dock showhidden -bool true
+
+# Don’t show recent applications in Dock
+defaults write com.apple.dock show-recents -bool false
+
+# Screen Capture
+
+# Create "Screenshots" folder on the Documents and set it as the default location
+mkdir -p $HOME/Documents/Screenshots
+defaults write com.apple.screencapture "location" $HOME/Documents/Screenshots
+
+# Display the thumbnail after taking a screenshot (default)
+defaults write com.apple.screencapture "show-thumbnail" -bool true
+
+# Don't include date in the screenshot file name
+defaults write com.apple.screencapture "include-date" -bool true
+
+# Disable shadow in screenshots
+defaults write com.apple.screencapture disable-shadow -bool true
+
+# Finder
+
+# Show filename extensions
+defaults write NSGlobalDomain "AppleShowAllExtensions" -bool true
+
+# Show path bar in the bottom of the Finder windows
+defaults write com.apple.finder "ShowPathbar" -bool true
+
+# Set the default view style for folders without custom setting to list view
+defaults write com.apple.finder "FXPreferredViewStyle" -string "Nlsv"
+
+# Set the default search scope when performing a search in Finder to the current folder
+defaults write com.apple.finder "FXDefaultSearchScope" -string "SCcf"
+
+# Save to disk (not to iCloud) by default
+defaults write NSGlobalDomain "NSDocumentSaveNewDocumentsToCloud" -bool false
+
+# Avoid creating .DS_Store files on network or USB volumes
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
+
+# Trackpad
+
+defaults write com.apple.AppleMultitouchTrackpad "FirstClickThreshold" -int 1
+defaults write com.apple.AppleMultitouchTrackpad "DragLock" -bool false
+defaults write com.apple.AppleMultitouchTrackpad "Dragging" -bool false
+defaults write com.apple.AppleMultitouchTrackpad "TrackpadThreeFingerDrag" -bool false
+
+# Mission Control
+
+# Do not rearrange spaces based on most recent use
+defaults write com.apple.dock "mru-spaces" -bool false
+
+# Don’t group windows by application in Mission Control
+# (i.e. use the old Exposé behavior instead)
+defaults write com.apple.dock expose-group-by-app -bool false
+
+# Disable Dashboard
+defaults write com.apple.dashboard mcx-disabled -bool true
+
+# Don’t show Dashboard as a Space
+defaults write com.apple.dock dashboard-in-overlay -bool true

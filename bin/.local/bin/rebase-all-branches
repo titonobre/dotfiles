@@ -1,0 +1,60 @@
+#!/usr/bin/env bash
+
+# Set the branch you want to rebase onto
+BASE_BRANCH=$(git remote show origin | awk '/HEAD branch/ {print $NF}')
+
+# Colors for console output
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[0;33m'
+BLUE='\033[0;34m'
+NC='\033[0m' # No Color
+
+# Logging functions
+log_info() {
+  echo -e "${BLUE}$1${NC}"
+}
+
+log_success() {
+  echo -e "${GREEN}$1${NC}"
+}
+
+log_error() {
+  echo -e "${RED}$1${NC}"
+}
+
+# Check if the workspace is dirty
+if [ -n "$(git status --porcelain)" ]; then
+  log_error "Workspace is dirty. Please commit or stash changes and try again."
+  exit 1
+fi
+
+# Get the current branch name
+CURRENT_BRANCH="$(git rev-parse --abbrev-ref HEAD)"
+
+# Get a list of all local branches
+BRANCHES=$(git branch --format="%(refname:short)")
+
+# Loop through the branches and rebase each one onto the base branch
+for branch in $BRANCHES; do
+  # Skip the base branch
+  if [ "$branch" == "$BASE_BRANCH" ]; then
+    continue
+  fi
+
+  log_info "Rebasing $branch onto $BASE_BRANCH"
+
+  # Rebase the branch onto the base branch and check if it was successful
+  git checkout "$branch"
+  if git rebase "$BASE_BRANCH"; then
+    log_success "Rebased $branch onto $BASE_BRANCH"
+  else
+    # Abort the rebase for this branch and print an error message
+    log_error "Rebasing $branch onto $BASE_BRANCH failed. Aborting."
+    git rebase --abort
+    continue
+  fi
+done
+
+# Switch back to the current branch
+git checkout "$CURRENT_BRANCH"

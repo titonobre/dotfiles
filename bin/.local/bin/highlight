@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+# Usage: cat something | highlight <pattern>
+
+grep --color -E "$1|$"
