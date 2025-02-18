@@ -7,6 +7,9 @@ export XDG_STATE_HOME=$HOME/.local/state
 # ZSH
 export ZDOTDIR=$XDG_CONFIG_HOME/zsh
 
+# Brew
+export HOMEBREW_BUNDLE_FILE=$XDG_CONFIG_HOME/homebrew/Brewfile
+
 # User Scripts
 export PATH=$HOME/.local/bin:$PATH
 

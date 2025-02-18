@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+set -e
+
+# Install HomeBrew
+if ! command -v brew >/dev/null; then
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi
+
+# Install Base Bundle
+brew bundle install --file=homebrew/.config/homebrew/Brewfile
+
+# Stow HomeBrew Config
+stow homebrew

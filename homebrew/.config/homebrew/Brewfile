@@ -1,0 +1,45 @@
+tap "buo/cask-upgrade"
+tap "homebrew/bundle"
+tap "jandedobbeleer/oh-my-posh"
+tap "jesseduffield/lazynpm"
+# Automate deployment, configuration, and upgrading
+brew "ansible"
+# Secure runtime for JavaScript and TypeScript
+brew "deno"
+# Fast and simple Node.js version manager
+brew "fnm"
+# Command-line fuzzy finder written in Go
+brew "fzf"
+# GitHub command-line tool
+brew "gh"
+# Distributed revision control system
+brew "git"
+# Audit git repos for secrets
+brew "gitleaks"
+# Lightweight and flexible command-line JSON processor
+brew "jq"
+# Simple terminal UI for git commands
+brew "lazygit"
+# Modern and intuitive terminal-based text editor
+brew "micro"
+# Simple tool to make locally trusted development certificates
+brew "mkcert"
+# NCurses Disk Usage
+brew "ncdu"
+# Organize software neatly under a single directory tree (e.g. /usr/local)
+brew "stow"
+# Display directories as trees (with optional color/HTML output)
+brew "tree"
+# Terminal sharing over the Internet
+brew "tty-share"
+# Internet file retriever
+brew "wget"
+# Hackable, minimal, fast TUI file explorer
+brew "xplr"
+# Shell extension to navigate your filesystem faster
+brew "zoxide"
+# Prompt theme engine for any shell
+brew "jandedobbeleer/oh-my-posh/oh-my-posh"
+# A simple terminal UI for git commands, written in Go
+brew "jesseduffield/lazynpm/lazynpm"
+cask "font-meslo-lg-nerd-font"
