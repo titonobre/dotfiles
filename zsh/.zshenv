@@ -12,3 +12,6 @@ export PATH=$HOME/.local/bin:$PATH
 
 # Default Editor
 export EDITOR='micro'
+
+# Load Extras
+source <(find . -maxdepth 1 -name '.zshenv-*' -exec cat {} +)

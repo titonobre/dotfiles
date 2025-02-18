@@ -75,6 +75,9 @@ eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 eval "$(fnm env --use-on-cd)"
 
+# Load Extras
+source <(find . -maxdepth 1 -name '.zshrc-*' -exec cat {} +)
+
 # Aliases
 alias ls='ls --color'
 alias la='ls -la'
