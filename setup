@@ -12,6 +12,7 @@ fi
 
 if [ "$PLATFORM" == "macos" ]; then
     ./setup-homebrew
+    ./setup-mac
     ./setup-mac-preferences
 fi
 
