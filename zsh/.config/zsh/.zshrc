@@ -19,6 +19,10 @@ else
   export PS1="%~"$'\n'"%(!.#.$) "
 fi
 
+# Sessions
+export SHELL_SESSION_DIR=$XDG_STATE_HOME/zsh/sessions
+export SHELL_SESSION_FILE=$SHELL_SESSION_DIR/$TERM_SESSION_ID
+
 # Configure History
 HISTFILE="$XDG_STATE_HOME"/zsh/history
 HISTORY_BASE="$XDG_STATE_HOME"/zsh/directory_history
