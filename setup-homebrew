@@ -7,8 +7,22 @@ if ! command -v brew >/dev/null; then
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
-# Install Base Bundle
-brew bundle install --file=homebrew/.config/homebrew/Brewfile
-
 # Stow HomeBrew Config
 stow homebrew
+
+# Get macOS version
+MACOS_VERSION=$(sw_vers -productVersion)
+
+# Extract only the major version and ensure it's a number
+MACOS_MAJOR_VERSION=$(echo "$MACOS_VERSION" | awk -F '.' '{print $1}' | tr -d '[:space:]')
+
+if [[ "$MACOS_MAJOR_VERSION" -eq 12 ]]; then
+    # Stow HomeBrew Config for MacOS Monterey
+    stow homebrew-monterey
+
+    # Install Base Bundle
+    brew bundle install --file=homebrew/.config/homebrew/Brewfile-base
+else
+    # Install Default Bundle
+    brew bundle install --file=homebrew/.config/homebrew/Brewfile
+fi
