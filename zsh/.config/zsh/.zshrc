@@ -77,9 +77,9 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 # Shell integrations
-eval "$(fzf --zsh)"
-eval "$(zoxide init --cmd cd zsh)"
-eval "$(fnm env --use-on-cd)"
+source <(fzf --zsh)
+source <(zoxide init --cmd cd zsh)
+source <(fnm env --use-on-cd)
 
 # Load Extras
 source <(find . -maxdepth 1 -name '.zshrc-*' -exec cat {} +)
