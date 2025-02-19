@@ -50,10 +50,7 @@ fi
 source "${ZINIT_HOME}/zinit.zsh"
 
 # Add Zsh plugins
-zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
-zinit light zsh-users/zsh-autosuggestions
-zinit light Aloxaf/fzf-tab
 
 # Add Snippets
 zinit snippet OMZP::git
@@ -65,6 +62,11 @@ zinit snippet OMZP::per-directory-history/per-directory-history.zsh
 # Load Completions
 autoload -Uz compinit && compinit -d "$XDG_CACHE_HOME"/zsh/zcompdump-$ZSH_VERSION
 zinit cdreplay -q
+
+# Load Plugins after Completions
+zinit light Aloxaf/fzf-tab
+zinit light zsh-users/zsh-syntax-highlighting
+zinit light zsh-users/zsh-autosuggestions
 
 # Completion Styling
 zstyle ':completion:*' cache-path "$XDG_CACHE_HOME"/zsh/zcompcache
