@@ -4,6 +4,8 @@ tap "jandedobbeleer/oh-my-posh"
 tap "jesseduffield/lazynpm"
 # Automate deployment, configuration, and upgrading
 brew "ansible"
+# Clone of cat(1) with syntax highlighting and Git integration
+brew "bat"
 # Secure runtime for JavaScript and TypeScript
 brew "deno"
 # Fast and simple Node.js version manager
@@ -32,6 +34,8 @@ brew "stow"
 brew "tree"
 # Terminal sharing over the Internet
 brew "tty-share"
+# Sends magic packets to wake up network-devices
+brew "wakeonlan"
 # Internet file retriever
 brew "wget"
 # Hackable, minimal, fast TUI file explorer
