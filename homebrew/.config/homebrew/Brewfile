@@ -16,6 +16,8 @@ brew "fzf"
 brew "gh"
 # Distributed revision control system
 brew "git"
+# Syntax-highlighting pager for git and diff output
+brew "git-delta"
 # Audit git repos for secrets
 brew "gitleaks"
 # Lightweight and flexible command-line JSON processor
