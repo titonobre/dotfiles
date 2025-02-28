@@ -60,8 +60,8 @@ defaults write com.apple.dock "autohide" -bool true
 # Genie effect for minimizing windows (default)
 defaults write com.apple.dock "mineffect" -string "scale"
 
-# Set the icon size of Dock items to 36 pixels
-defaults write com.apple.dock tilesize -int 36
+# Set the icon size of Dock items to 64 pixels
+defaults write com.apple.dock tilesize -int 64
 
 # Make Dock icons of hidden applications translucent
 defaults write com.apple.dock showhidden -bool true
