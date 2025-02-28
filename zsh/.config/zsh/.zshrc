@@ -91,5 +91,3 @@ alias vim='nvim'
 alias c='clear'
 alias m="micro"
 alias ni="npm install"
-alias gupi="gup && npm install"
-alias gwip='git commit -a -m "wip"'
