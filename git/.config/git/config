@@ -1,10 +1,36 @@
 [core]
 	excludesfile = ~/.gitignore_global
 	editor = micro
+[help]
+        autocorrect = prompt
+[column]
+	ui = auto
+[branch]
+	sort = -committerdate
+[tag]
+	sort = version:refname
+
+# local operations
+
+[init]
+	defaultBranch = main
+	templatedir = ~/.git-templates
 [commit]
+	verbose = true
 	template = ~/.gitmessage
+[rebase]
+	autoSquash = true
+	autoStash = true
+	updateRefs = true
+[rerere]
+	enabled = true
+	autoupdate = true
 [diff]
 	tool = bc
+	algorithm = histogram
+	colorMoved = plain
+	mnemonicPrefix = true
+	renames = true
 [merge]
 	tool = bc
 [mergetool]
@@ -13,14 +39,22 @@
 	trustExitCode = true
 [difftool "bc"]
 	trustExitCode = true
+
+# remote operations
+
+[fetch]
+	prune = true
+	pruneTags = true
+	all = true
+[push]
+	default = simple
+	autoSetupRemote = true
+	followTags = true
+
+# aliases
+
 [alias]
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 	mr = !sh -c 'git fetch $1 merge-requests/$2/head:mrs/mr-$1-$2 && git checkout mrs/mr-$1-$2' -
 	sweep = !git branch --merged $([[ $1 != \"-f\" ]] \\\n&& git rev-parse master) | egrep -v \"(^\\*|^\\s*(master|main|develop)$)\" \\\n| xargs git branch -d
 	rebase-all = !~/.local/bin/rebase-all-branches
-[init]
-	templatedir = ~/.git-templates
-[push]
-	default = current
-[rebase]
-	autosquash = true
