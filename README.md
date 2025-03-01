@@ -18,6 +18,14 @@ Repository Structure
 ./setup
 ```
 
+## Leaks
+
+To prevent secrets from being leaked, use `gitleaks` in a pre-push hook.
+
+```sh
+echo -e 'gitleaks git' > .git/hooks/pre-push && chmod +x .git/hooks/pre-push
+```
+
 ## Homebrew
 
 Install Bundle
