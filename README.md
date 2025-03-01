@@ -1,5 +1,17 @@
 # dotfiles
 
+Repository Structure
+
+```txt
+.
+├── <package>
+│   ├── .config
+│   │   └── <application specific directory>
+│   │       └── [files to place in the config directory]
+│   └── [files to place in the home directory]
+└── setup
+```
+
 ## Install
 
 ```sh
