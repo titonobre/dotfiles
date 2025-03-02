@@ -8,6 +8,8 @@ brew "ansible"
 brew "bat"
 # Secure runtime for JavaScript and TypeScript
 brew "deno"
+# Modern, maintained replacement for ls
+brew "eza"
 # Fast and simple Node.js version manager
 brew "fnm"
 # Command-line fuzzy finder written in Go
