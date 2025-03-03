@@ -1,3 +1,4 @@
 theme = "iTerm2 Tango Dark"
 font-family = "MesloLGM Nerd Font"
 background-opacity = 0.90
+macos-titlebar-style = "tabs"
