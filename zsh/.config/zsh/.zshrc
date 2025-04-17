@@ -74,7 +74,7 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza --all --tree --icons --level=1 --git-ignore --ignore-glob=.DS_Store --group-directories-first --sort=accessed --color=always $realpath 2>/dev/null || ls -1a --color $realpath'
-zstyle ':fzf-tab:complete:cd:*' fzf-flags --height=35% --preview-window=right:65%
+zstyle ':fzf-tab:complete:cd:*' fzf-flags --height=~100% --preview-window=right:65%
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'eza --all --tree --icons --level=1 --git-ignore --ignore-glob=.DS_Store --group-directories-first --sort=accessed --color=always $realpath 2>/dev/null || ls -1a --color $realpath'
 zstyle ':fzf-tab:complete:*:*' fzf-preview 'bat --color=always --style=plain --line-range=:500 $realpath 2>/dev/null || eza --all --tree --icons --level=1 --git-ignore --ignore-glob=.DS_Store --group-directories-first --color=always $realpath 2>/dev/null || ls -1a --color $realpath'
 
