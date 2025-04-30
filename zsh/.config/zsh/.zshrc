@@ -89,14 +89,3 @@ for fragment in "$ZDOTDIR/.zshrc-"* "$HOME/.zshrc-"*; do
   [ -f "$fragment" ] && source "$fragment"
 done
 unsetopt nullglob
-
-# Aliases
-alias ls='ls --color'
-alias la='ls -la'
-alias vim='nvim'
-alias c='clear'
-alias m='micro'
-alias ni='npm install'
-alias ..='cd ..'
-alias ...='cd ../..'
-alias ....='cd ../../..'
