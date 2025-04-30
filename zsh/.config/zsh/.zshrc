@@ -84,7 +84,11 @@ source <(zoxide init --cmd cd zsh)
 source <(fnm env --use-on-cd)
 
 # Load Extras
-source <(find . -maxdepth 1 -name '.zshrc-*' -exec cat {} +)
+setopt nullglob
+for fragment in "$ZDOTDIR/.zshrc-"* "$HOME/.zshrc-"*; do
+  [ -f "$fragment" ] && source "$fragment"
+done
+unsetopt nullglob
 
 # Aliases
 alias ls='ls --color'

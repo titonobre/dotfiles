@@ -20,4 +20,8 @@ export PATH=$HOME/.local/bin:$PATH
 export EDITOR='micro'
 
 # Load Extras
-source <(find . -maxdepth 1 -name '.zshenv-*' -exec cat {} +)
+setopt nullglob
+for fragment in "$ZDOTDIR/.zshenv-"* "$HOME/.zshenv-"*; do
+    [ -f "$fragment" ] && source "$fragment"
+done
+unsetopt nullglob
