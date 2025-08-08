@@ -18,8 +18,12 @@ brew "fzf"
 brew "gh"
 # Distributed revision control system
 brew "git"
+# Automatic git commit --fixup
+brew "git-absorb"
 # Syntax-highlighting pager for git and diff output
 brew "git-delta"
+# Quickly rewrite git repository history
+brew "git-filter-repo"
 # Audit git repos for secrets
 brew "gitleaks"
 # Lightweight and flexible command-line JSON processor
