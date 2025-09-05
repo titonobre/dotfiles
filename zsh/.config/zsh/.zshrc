@@ -81,7 +81,7 @@ zstyle ':fzf-tab:complete:*:*' fzf-preview 'bat --color=always --style=plain --l
 # Shell integrations
 source <(fzf --zsh)
 source <(zoxide init --cmd cd zsh)
-source <(fnm env --use-on-cd)
+source <(mise activate zsh)
 
 # Load Extras
 setopt nullglob

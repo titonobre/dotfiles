@@ -6,6 +6,7 @@ packages=(
     bin
     ghostty
     git
+    mise
     ohmyposh
     zsh
     lazygit

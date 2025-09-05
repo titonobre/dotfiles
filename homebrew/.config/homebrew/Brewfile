@@ -10,8 +10,6 @@ brew "bat"
 brew "deno"
 # Modern, maintained replacement for ls
 brew "eza"
-# Fast and simple Node.js version manager
-brew "fnm"
 # Command-line fuzzy finder written in Go
 brew "fzf"
 # GitHub command-line tool
@@ -32,6 +30,8 @@ brew "jq"
 brew "lazygit"
 # Modern and intuitive terminal-based text editor
 brew "micro"
+# Polyglot runtime manager (asdf rust clone)
+brew "mise"
 # Simple tool to make locally trusted development certificates
 brew "mkcert"
 # NCurses Disk Usage
