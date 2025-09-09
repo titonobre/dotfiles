@@ -7,6 +7,7 @@ packages=(
     ghostty
     git
     mise
+    ncdu
     ohmyposh
     zsh
     lazygit
