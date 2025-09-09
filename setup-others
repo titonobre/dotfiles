@@ -6,11 +6,11 @@ packages=(
     bin
     ghostty
     git
+    lazygit
     mise
     ncdu
     ohmyposh
     zsh
-    lazygit
 )
 
 stow "${packages[@]}"
