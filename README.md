@@ -18,6 +18,17 @@ Repository Structure
 ./setup
 ```
 
+## Adopt Existing Configs
+
+```sh
+# make new stow module
+mkdir <new-package>
+# add files matching the actual location
+touch <new-package>/.config/<application specific directory>/somefile
+# adopt files
+stow --adopt <new-package>
+```
+
 ## Leaks
 
 To prevent secrets from being leaked, use `gitleaks` in a pre-push hook.
