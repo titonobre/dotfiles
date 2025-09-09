@@ -2,7 +2,7 @@
 	excludesfile = ~/.gitignore_global
 	editor = micro
 [help]
-        autocorrect = prompt
+	autocorrect = prompt
 [column]
 	ui = auto
 [branch]
