@@ -85,7 +85,7 @@ source <(mise activate zsh)
 
 # Load Extras
 setopt nullglob
-for fragment in "$ZDOTDIR/.zshrc-"* "$HOME/.zshrc-"*; do
+for fragment in "$ZDOTDIR/.zshrc-"* "$XDG_CONFIG_HOME/shell/shell.d/"*; do
   [ -f "$fragment" ] && source "$fragment"
 done
 unsetopt nullglob

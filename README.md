@@ -29,6 +29,12 @@ touch <new-package>/.config/<application specific directory>/somefile
 stow --adopt <new-package>
 ```
 
+## Additional Configuration
+
+Put extra shell configuration files in `~/.config/shell/env.d/` and `~/.config/shell/shell.d/`.
+
+Files in `env.d` are sourced in `.zshenv` and files in `shell.d` are sourced in `.zshrc`.
+
 ## Leaks
 
 To prevent secrets from being leaked, use `gitleaks` in a pre-push hook.

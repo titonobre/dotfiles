@@ -21,7 +21,7 @@ export EDITOR='micro'
 
 # Load Extras
 setopt nullglob
-for fragment in "$ZDOTDIR/.zshenv-"* "$HOME/.zshenv-"*; do
+for fragment in "$ZDOTDIR/.zshenv-"* "$XDG_CONFIG_HOME/shell/env.d/"*; do
     [ -f "$fragment" ] && source "$fragment"
 done
 unsetopt nullglob
