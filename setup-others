@@ -10,6 +10,8 @@ packages=(
     mise
     ncdu
     ohmyposh
+    pnpm
+    shell
     zsh
 )
 
