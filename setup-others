@@ -12,6 +12,7 @@ packages=(
     ohmyposh
     pnpm
     shell
+    yazi
     zsh
 )
 
