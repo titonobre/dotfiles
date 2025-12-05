@@ -2,6 +2,8 @@ tap "buo/cask-upgrade"
 tap "homebrew/bundle"
 tap "jandedobbeleer/oh-my-posh"
 tap "jesseduffield/lazynpm"
+# Display directories as trees (with optional color/HTML output)
+brew "tree"
 # Automate deployment, configuration, and upgrading
 brew "ansible"
 # Improved shell history for zsh, bash, fish and nushell
@@ -44,8 +46,6 @@ brew "ncdu"
 brew "ripgrep"
 # Organize software neatly under a single directory tree (e.g. /usr/local)
 brew "stow"
-# Display directories as trees (with optional color/HTML output)
-brew "tree"
 # Terminal sharing over the Internet
 brew "tty-share"
 # Sends magic packets to wake up network-devices
