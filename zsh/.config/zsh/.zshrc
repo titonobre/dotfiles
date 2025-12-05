@@ -24,18 +24,7 @@ export SHELL_SESSION_DIR=$XDG_STATE_HOME/zsh/sessions
 export SHELL_SESSION_FILE=$SHELL_SESSION_DIR/$TERM_SESSION_ID
 
 # Configure History
-HISTFILE="$XDG_STATE_HOME"/zsh/history
-HISTORY_BASE="$XDG_STATE_HOME"/zsh/directory_history
-HISTSIZE=5000
-SAVEHIST=$HISTSIZE
-HISTDUP=erase
-setopt appendhistory
-setopt sharehistory
-setopt hist_ignore_space
-setopt hist_ignore_all_dups
-setopt hist_save_no_dups
-setopt hist_ignore_dups
-setopt hist_find_no_dups
+unset HISTFILE
 
 # Setup Zinit
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
@@ -57,7 +46,6 @@ zinit snippet OMZP::git
 zinit snippet OMZP::npm
 zinit snippet OMZP::sudo
 zinit snippet OMZP::command-not-found
-zinit snippet OMZP::per-directory-history/per-directory-history.zsh
 
 # Load Completions
 autoload -Uz compinit && compinit -d "$XDG_CACHE_HOME"/zsh/zcompdump-$ZSH_VERSION
