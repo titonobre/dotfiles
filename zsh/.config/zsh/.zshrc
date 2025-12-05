@@ -55,6 +55,7 @@ zinit cdreplay -q
 zinit light Aloxaf/fzf-tab
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-autosuggestions
+zinit light atuinsh/atuin
 
 # Completion Styling
 zstyle ':completion:*' cache-path "$XDG_CACHE_HOME"/zsh/zcompcache

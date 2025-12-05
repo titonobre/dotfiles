@@ -3,6 +3,7 @@
 set -e
 
 packages=(
+    atuin
     bin
     ghostty
     git

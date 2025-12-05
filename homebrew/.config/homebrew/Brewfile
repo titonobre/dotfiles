@@ -4,6 +4,8 @@ tap "jandedobbeleer/oh-my-posh"
 tap "jesseduffield/lazynpm"
 # Automate deployment, configuration, and upgrading
 brew "ansible"
+# Improved shell history for zsh, bash, fish and nushell
+brew "atuin"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
 # Secure runtime for JavaScript and TypeScript
