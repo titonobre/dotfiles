@@ -34,6 +34,8 @@ brew "gitleaks"
 brew "jq"
 # Simple terminal UI for git commands
 brew "lazygit"
+# Syntax-aware git merge driver
+brew "mergiraf"
 # Modern and intuitive terminal-based text editor
 brew "micro"
 # Polyglot runtime manager (asdf rust clone)
