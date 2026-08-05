@@ -1,6 +1,10 @@
 # dotfiles
 
-Repository Structure
+This repository contains my personal dotfiles and configuration files for various applications. It is organized by packages, each containing the necessary files to configure a specific application or tool. 
+
+The setup process uses GNU Stow to manage the symlinking of these files into the appropriate locations in the home directory.
+
+Repository Structure:
 
 ```txt
 .
