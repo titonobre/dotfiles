@@ -1,0 +1,12 @@
+[ui]
+agent_panel_sort = "spaces"
+
+[ui.toast]
+delivery = "terminal"
+
+[theme]
+name = "terminal"
+auto_switch = false
+
+[keys]
+open_worktree = "prefix+shift+o"
