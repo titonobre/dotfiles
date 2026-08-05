@@ -54,7 +54,7 @@ brew bundle install
 Update Bundle
 
 ```sh
-brew bundle dump --force --describe --no-vscode --no-upgrade
+brew bundle dump --force --no-vscode --no-npm
 ```
 
 ### Homebrew on Monterey
