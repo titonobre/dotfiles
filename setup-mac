@@ -2,4 +2,26 @@
 
 set -e
 
+# Get macOS version
+MACOS_VERSION=$(sw_vers -productVersion)
+
+# Extract only the major version and ensure it's a number
+MACOS_MAJOR_VERSION=$(echo "$MACOS_VERSION" | awk -F '.' '{print $1}' | tr -d '[:space:]')
+
+# Version specific setup
+if [[ "$MACOS_MAJOR_VERSION" -eq 12 ]]; then
+    echo "macOS Monterey is not supported."
+    exit 1
+fi
+
+# Install HomeBrew
+if ! command -v brew >/dev/null; then
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi
+
+# Install Default Bundle
+brew bundle install --file=homebrew/.config/homebrew/Brewfile
+
+# Stow Mac specific config
+stow homebrew
 stow karabiner
